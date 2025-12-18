@@ -3,38 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Lima | Performance Digital com Estratégia</title>
+    <title>Robert Lima Designer | Tráfego Pago com Estratégia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 
-        * VARIÁVEIS E RESET 
-        * Definindo a paleta premium e resetando estilos padrão
-        */
+        /* RESET E CONFIGURAÇÕES GERAIS */
         :root {
             --preto-tecnologico: #0B0B0D;
             --dourado-premium: #C9A24D;
             --vermelho-luxo: #8B1E1E;
             --branco-ivory: #F4F3EE;
-            --cinza-escuro: #1A1A1E;
-            --cinza-medio: #2A2A2E;
+            --cinza-escuro: #1A1A1D;
+            --cinza-medio: #2D2D32;
             
+            --fonte-principal: 'Inter', sans-serif;
             --fonte-headline: 'Plus Jakarta Sans', sans-serif;
-            --fonte-texto: 'Inter', sans-serif;
             
-            --espacamento-xs: 1rem;
-            --espacamento-sm: 2rem;
-            --espacamento-md: 4rem;
-            --espacamento-lg: 6rem;
-            
-            --animacao-entrada: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            --animacao-suave: 0.4s ease;
-            
-            --borda-arredondada: 4px;
-            --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.3);
-            --sombra-dourada: 0 5px 15px rgba(201, 162, 77, 0.2);
+            --animacao-suave: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transicao-padrao: 0.4s var(--animacao-suave);
         }
         
         * {
@@ -44,177 +32,78 @@
         }
         
         html {
-            font-size: 16px;
             scroll-behavior: smooth;
+            font-size: 16px;
         }
         
         body {
-            font-family: var(--fonte-texto);
+            font-family: var(--fonte-principal);
             background-color: var(--preto-tecnologico);
             color: var(--branco-ivory);
             line-height: 1.6;
-            letter-spacing: 0.01em;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.01em;
         }
         
-        /* 
-        * TIPOGRAFIA PREMIUM 
-        * Tracking levemente aberto, hierarquia clara
-        */
         h1, h2, h3, h4 {
             font-family: var(--fonte-headline);
             font-weight: 700;
-            letter-spacing: 0.02em;
             line-height: 1.2;
+            letter-spacing: 0.02em;
         }
         
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--branco-ivory) 70%, rgba(244, 243, 238, 0.8));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transicao-padrao);
         }
         
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            position: relative;
+        ul {
+            list-style: none;
         }
         
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dourado-premium);
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         
-        p {
-            font-size: 1.125rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.015em;
-        }
-        
-        .texto-destaque {
-            font-weight: 500;
-            color: var(--dourado-premium);
-        }
-        
-        /* 
-        * LAYOUT E CONTAINERS 
-        * Estrutura responsiva mobile-first
-        */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--espacamento-xs);
+            padding: 0 1.5rem;
         }
         
-        section {
-            padding: var(--espacamento-lg) 0;
+        .section {
+            padding: 5rem 0;
             position: relative;
         }
         
-        /* 
-        * LINHA DOURADA - ELEMENTO PREMIUM
-        */
-        .linha-dourada {
-            height: 1px;
-            width: 100px;
-            background: linear-gradient(90deg, transparent, var(--dourado-premium), transparent);
-            margin: 2rem auto;
-            position: relative;
-        }
-        
-        .linha-dourada::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
-            background-color: var(--dourado-premium);
-            border-radius: 50%;
-        }
-        
-        /* 
-        * SEÇÃO HERO - IMPACTO SILENCIOSO
-        */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(201, 162, 77, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 30, 30, 0.03) 0%, transparent 50%);
-            z-index: 0;
-        }
-        
-        .hero-conteudo {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .hero-subtitulo {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            color: rgba(244, 243, 238, 0.8);
-            max-width: 600px;
-        }
-        
-        /* 
-        * BOTÕES PREMIUM - COM ANIMAÇÕES SUAVES
-        */
         .btn {
             display: inline-block;
-            padding: 1.2rem 2.5rem;
-            font-family: var(--fonte-headline);
+            padding: 1rem 2.5rem;
+            border-radius: 0;
             font-weight: 600;
-            text-decoration: none;
-            border-radius: var(--borda-arredondada);
-            transition: all var(--animacao-suave);
+            font-size: 1rem;
             text-align: center;
-            letter-spacing: 0.03em;
-            border: none;
             cursor: pointer;
-            font-size: 1.1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            transition: all var(--transicao-padrao);
+            border: none;
+            font-family: var(--fonte-headline);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
         
         .btn-vermelho {
             background-color: var(--vermelho-luxo);
             color: var(--branco-ivory);
-            box-shadow: 0 5px 15px rgba(139, 30, 30, 0.3);
         }
         
         .btn-vermelho:hover {
-            background-color: #9e2525;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(139, 30, 30, 0.4);
-        }
-        
-        .btn-vermelho:active {
-            transform: translateY(-1px);
+            background-color: #a02525;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 30, 30, 0.3);
         }
         
         .btn-dourado {
@@ -225,158 +114,360 @@
         
         .btn-dourado:hover {
             background-color: rgba(201, 162, 77, 0.1);
-            transform: translateY(-3px);
-            box-shadow: var(--sombra-dourada);
+            transform: translateY(-2px);
         }
         
-        /* 
-        * SEÇÃO POSICIONAMENTO - COPY DIRETA
-        */
-        .posicionamento {
-            text-align: center;
-            padding: var(--espacamento-md) 0;
+        .linha-dourada {
+            height: 1px;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, var(--dourado-premium), transparent);
+            margin: 2rem auto;
         }
         
-        .posicionamento h2 {
-            font-size: 2.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .linha-dourada-esquerda {
+            height: 1px;
+            width: 80px;
+            background-color: var(--dourado-premium);
+            margin: 1.5rem 0;
         }
         
-        /* 
-        * SEÇÃO MÉTODO - 3 PILARES PREMIUM
-        */
-        .metodo {
-            padding: var(--espacamento-lg) 0;
+        /* ANIMAÇÕES DE SCROLL */
+        .oculto {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--animacao-suave), transform 0.8s var(--animacao-suave);
         }
         
-        .metodo h2 {
-            text-align: center;
-            margin-bottom: 4rem;
+        .visivel {
+            opacity: 1;
+            transform: translateY(0);
         }
         
-        .pilares {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .pilares {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-        
-        .pilar {
-            background-color: var(--cinza-escuro);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform var(--animacao-suave), box-shadow var(--animacao-suave);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .pilar:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--sombra-suave);
-            border-color: rgba(201, 162, 77, 0.2);
-        }
-        
-        .pilar::before {
-            content: '';
-            position: absolute;
+        /* HEADER E LOGO */
+        .header {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--dourado-premium), transparent);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background-color: rgba(11, 11, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 162, 77, 0.1);
         }
         
-        .pilar-icon {
-            font-size: 2.5rem;
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo placeholder - substitua pela sua logo */
+        .logo-placeholder {
+            width: 180px;
+            height: 40px;
+            background-color: rgba(244, 243, 238, 0.05);
+            border: 1px solid rgba(201, 162, 77, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--dourado-premium);
-            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
         }
         
-        /* 
-        * SEÇÃO NEGÓCIOS LOCAIS - COM PROFUNDIDADE
-        */
-        .negocios-locais {
-            padding: var(--espacamento-lg) 0;
+        .logo-placeholder span {
+            color: var(--branco-ivory);
+            font-weight: 300;
+        }
+        
+        .contato-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .contato-header a {
+            font-size: 0.9rem;
+            color: rgba(244, 243, 238, 0.7);
+            transition: color var(--transicao-padrao);
+        }
+        
+        .contato-header a:hover {
+            color: var(--dourado-premium);
+        }
+        
+        /* SEÇÃO HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
             position: relative;
             overflow: hidden;
         }
         
-        .negocios-locais::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(139, 30, 30, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-        
-        .negocios-conteudo {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .negocios-conteudo h2 {
-            color: var(--dourado-premium);
-        }
-        
-        /* 
-        * SEÇÃO CTA - CLÍMAX COM VERMELHO
-        */
-        .cta-climax {
-            padding: var(--espacamento-lg) 0;
-            text-align: center;
-            background-color: rgba(10, 10, 12, 0.9);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-climax::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 40%, rgba(139, 30, 30, 0.05) 100%);
-            z-index: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(201, 162, 77, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(139, 30, 30, 0.02) 0%, transparent 50%);
+            z-index: -1;
         }
         
-        .cta-conteudo {
+        .hero-content {
+            max-width: 800px;
             position: relative;
             z-index: 2;
-            max-width: 700px;
-            margin: 0 auto;
         }
         
-        .cta-climax h2 {
+        .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--branco-ivory);
         }
         
-        .cta-climax p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
+        .hero h1 span {
+            color: var(--dourado-premium);
+            position: relative;
+        }
+        
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--dourado-premium);
+            opacity: 0.5;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.25rem;
             color: rgba(244, 243, 238, 0.8);
+            margin-bottom: 3rem;
+            max-width: 600px;
         }
         
-        /* 
-        * RODAPÉ PREMIUM - MINIMALISTA
-        */
-        footer {
+        .hero-imagem {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            max-width: 500px;
+            height: 80%;
+            background: linear-gradient(135deg, rgba(201, 162, 77, 0.1), rgba(139, 30, 30, 0.05));
+            border-radius: 20px 0 0 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(244, 243, 238, 0.1);
+            font-size: 2rem;
+            border-left: 1px solid rgba(201, 162, 77, 0.1);
+            border-top: 1px solid rgba(201, 162, 77, 0.1);
+        }
+        
+        /* SEÇÃO POSICIONAMENTO */
+        .posicionamento {
             background-color: var(--cinza-escuro);
+            position: relative;
+        }
+        
+        .posicionamento::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--dourado-premium), transparent);
+        }
+        
+        .posicionamento-conteudo {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .posicionamento-texto {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--branco-ivory);
+        }
+        
+        .posicionamento-texto span {
+            color: var(--dourado-premium);
+        }
+        
+        /* SEÇÃO MÉTODO */
+        .metodo-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .metodo-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .metodo-card {
+            background-color: var(--cinza-escuro);
+            padding: 2.5rem 2rem;
+            position: relative;
+            border: 1px solid rgba(244, 243, 238, 0.05);
+            transition: all var(--transicao-padrao);
+        }
+        
+        .metodo-card:hover {
+            border-color: rgba(201, 162, 77, 0.3);
+            transform: translateY(-10px);
+        }
+        
+        .metodo-card-numero {
+            position: absolute;
+            top: -20px;
+            left: 2rem;
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(201, 162, 77, 0.1);
+            font-family: var(--fonte-headline);
+        }
+        
+        .metodo-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dourado-premium);
+        }
+        
+        .metodo-card p {
+            color: rgba(244, 243, 238, 0.7);
+        }
+        
+        .metodo-imagem {
+            margin-top: 4rem;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(201, 162, 77, 0.05), rgba(139, 30, 30, 0.05));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(244, 243, 238, 0.1);
+            font-size: 1.5rem;
+            border: 1px solid rgba(201, 162, 77, 0.1);
+        }
+        
+        /* SEÇÃO NEGÓCIOS LOCAIS */
+        .negocios-locais {
+            background-color: var(--cinza-escuro);
+            position: relative;
+        }
+        
+        .negocios-conteudo {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 992px) {
+            .negocios-conteudo {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .negocios-texto h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--branco-ivory);
+        }
+        
+        .negocios-texto h2 span {
+            color: var(--dourado-premium);
+        }
+        
+        .negocios-texto p {
+            font-size: 1.1rem;
+            color: rgba(244, 243, 238, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .negocios-imagem {
+            height: 400px;
+            background: linear-gradient(135deg, rgba(201, 162, 77, 0.08), rgba(139, 30, 30, 0.05));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(244, 243, 238, 0.1);
+            font-size: 1.5rem;
+            border: 1px solid rgba(201, 162, 77, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .negocios-imagem::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 162, 77, 0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        /* SEÇÃO CTA */
+        .cta {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(139, 30, 30, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--branco-ivory);
+        }
+        
+        .cta h2 span {
+            color: var(--vermelho-luxo);
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: rgba(244, 243, 238, 0.8);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* RODAPÉ */
+        .footer {
+            background-color: #080809;
             padding: 4rem 0 2rem;
             border-top: 1px solid rgba(201, 162, 77, 0.1);
         }
@@ -390,495 +481,336 @@
         
         @media (min-width: 768px) {
             .footer-conteudo {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 2fr 1fr 1fr;
             }
         }
         
         .footer-info h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--branco-ivory);
+            color: var(--dourado-premium);
         }
         
         .footer-info p {
             color: rgba(244, 243, 238, 0.7);
-            max-width: 400px;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
         }
         
-        .footer-contato h4 {
+        .footer-links h4, .footer-contato h4 {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            color: var(--dourado-premium);
-        }
-        
-        .contato-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .contato-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
             color: var(--branco-ivory);
-            text-decoration: none;
-            transition: color var(--animacao-suave);
+            position: relative;
+            padding-bottom: 0.5rem;
         }
         
-        .contato-link:hover {
+        .footer-links h4::after, .footer-contato h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--dourado-premium);
+        }
+        
+        .footer-links ul li, .footer-contato ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a, .footer-contato a {
+            color: rgba(244, 243, 238, 0.7);
+            transition: color var(--transicao-padrao);
+        }
+        
+        .footer-links a:hover, .footer-contato a:hover {
             color: var(--dourado-premium);
         }
         
-        .contato-link i {
-            font-size: 1.2rem;
-            width: 24px;
+        .footer-contato a i {
+            margin-right: 0.5rem;
+            width: 20px;
+            color: var(--dourado-premium);
         }
         
-        .footer-copyright {
+        .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(244, 243, 238, 0.05);
             color: rgba(244, 243, 238, 0.5);
             font-size: 0.9rem;
         }
         
-        /* 
-        * ANIMAÇÕES DE ENTRADA SUAVES
-        * Surgem por opacidade e leve deslocamento
-        */
-        .elemento-oculto {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity var(--animacao-entrada), transform var(--animacao-entrada);
-        }
-        
-        .elemento-visivel {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .delay-1 {
-            transition-delay: 0.1s;
-        }
-        
-        .delay-2 {
-            transition-delay: 0.2s;
-        }
-        
-        .delay-3 {
-            transition-delay: 0.3s;
-        }
-        
-        /* 
-        * NAVEGAÇÃO PREMIUM
-        */
-        header {
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-flutuante {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1.5rem 0;
-            background-color: rgba(11, 11, 13, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(201, 162, 77, 0.1);
-        }
-        
-        .nav-container {
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--espacamento-xs);
-        }
-        
-        .logo {
-            font-family: var(--fonte-headline);
+            justify-content: center;
+            color: white;
             font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--branco-ivory);
-            text-decoration: none;
-            letter-spacing: 0.03em;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all var(--transicao-padrao);
         }
         
-        .logo span {
-            color: var(--dourado-premium);
+        .whatsapp-flutuante:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
         
-        .nav-desktop {
-            display: none;
-        }
-        
-        @media (min-width: 992px) {
-            .nav-desktop {
-                display: flex;
-                align-items: center;
-                gap: 3rem;
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
-            .nav-link {
-                color: var(--branco-ivory);
-                text-decoration: none;
-                font-weight: 500;
-                letter-spacing: 0.02em;
-                position: relative;
-                transition: color var(--animacao-suave);
+            .hero-subheadline {
+                font-size: 1.1rem;
             }
             
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                bottom: -5px;
-                left: 0;
-                width: 0;
-                height: 1px;
-                background-color: var(--dourado-premium);
-                transition: width var(--animacao-suave);
+            .posicionamento-texto {
+                font-size: 1.7rem;
             }
             
-            .nav-link:hover {
-                color: var(--dourado-premium);
+            .cta h2 {
+                font-size: 2rem;
             }
             
-            .nav-link:hover::after {
-                width: 100%;
-            }
-            
-            .btn-nav {
-                padding: 0.8rem 1.8rem;
-                font-size: 1rem;
-            }
-        }
-        
-        .nav-mobile-toggle {
-            display: block;
-            background: none;
-            border: none;
-            color: var(--branco-ivory);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        @media (min-width: 992px) {
-            .nav-mobile-toggle {
+            .hero-imagem {
                 display: none;
             }
-        }
-        
-        /* 
-        * RESPONSIVIDADE - MOBILE FIRST
-        */
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 2.2rem;
+            
+            .header .container {
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            h2 {
-                font-size: 1.8rem;
+            .contato-header {
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
-            section {
-                padding: var(--espacamento-md) 0;
+            .section {
+                padding: 3rem 0;
             }
-            
-            .hero {
-                min-height: 90vh;
-            }
-            
-            .pilar {
-                padding: 2rem 1.5rem;
-            }
-            
-            .cta-climax h2 {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (min-width: 768px) and (max-width: 991px) {
-            .container {
-                padding: 0 var(--espacamento-sm);
-            }
-        }
-        
-        @media (min-width: 1200px) {
-            .container {
-                padding: 0;
-            }
-        }
-        
-        /* 
-        * EFEITOS VISUAIS PREMIUM
-        */
-        .brilho-dourado {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(201, 162, 77, 0.1) 0%, transparent 70%);
-            filter: blur(40px);
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        .brilho-dourado-1 {
-            top: 10%;
-            right: 10%;
-        }
-        
-        .brilho-dourado-2 {
-            bottom: 20%;
-            left: 5%;
-        }
-        
-        /* 
-        * SCROLL PERSONALIZADO
-        */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--preto-tecnologico);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--dourado-premium);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #b8923e;
         }
     </style>
 </head>
 <body>
-    <!-- 
-    * CABEÇALHO PREMIUM 
-    * Navegação fixa com efeito glass
-    -->
-    <header class="elemento-oculto">
-        <div class="nav-container">
-            <a href="#" class="logo">Robert<span>Lima</span></a>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo placeholder - substitua pela sua logo -->
+            <div class="logo-placeholder">
+                ROBERT<span>LIMA</span>
+            </div>
             
-            <!-- Navegação desktop -->
-            <nav class="nav-desktop">
-                <a href="#posicionamento" class="nav-link">Posicionamento</a>
-                <a href="#metodo" class="nav-link">Método</a>
-                <a href="#negocios" class="nav-link">Negócios Locais</a>
-                <a href="#contato" class="btn btn-dourado">Entrar em contato</a>
-            </nav>
-            
-            <!-- Botão menu mobile -->
-            <button class="nav-mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="contato-header">
+                <a href="mailto:ofcrobertmacedo@gmail.com">ofcrobertmacedo@gmail.com</a>
+                <a href="https://instagram.com/robertlimadesign" target="_blank">Instagram</a>
+            </div>
         </div>
     </header>
 
-    <!-- 
-    * SEÇÃO HERO - IMPACTO SILENCIOSO
-    * Primeira impressão premium
-    -->
-    <section class="hero">
-        <!-- Efeitos visuais de brilho -->
-        <div class="brilho-dourado brilho-dourado-1"></div>
-        <div class="brilho-dourado brilho-dourado-2"></div>
-        
+    <!-- HERO SECTION -->
+    <section class="hero section">
         <div class="container">
-            <div class="hero-conteudo">
-                <h1 class="elemento-oculto">Tráfego pago com estratégia.<br>Performance que gera decisão.</h1>
-                <p class="hero-subtitulo elemento-oculto delay-1">Tecnologia, dados e posicionamento para negócios que querem crescer de forma inteligente.</p>
-                <a href="#contato" class="btn btn-vermelho elemento-oculto delay-2">Falar com especialista</a>
+            <div class="hero-content oculto">
+                <h1>Tráfego pago com <span>estratégia.</span><br>Performance que gera <span>decisão.</span></h1>
+                <p class="hero-subheadline">Tecnologia, dados e posicionamento para negócios que querem crescer de forma inteligente.</p>
+                <a href="https://wa.me/5531982313684?text=Olá%20Robert,%20gostaria%20de%20conversar%20sobre%20tráfego%20pago%20com%20estratégia." target="_blank" class="btn btn-vermelho">Falar com especialista</a>
             </div>
-        </div>
-    </section>
-
-    <!-- 
-    * SEÇÃO POSICIONAMENTO
-    * Copy agressiva porém elegante
-    -->
-    <section id="posicionamento" class="posicionamento">
-        <div class="container">
-            <h2 class="elemento-oculto">Não é sobre anúncios.<br>É sobre aparecer para as pessoas certas, no momento certo.</h2>
-            <div class="linha-dourada elemento-oculto delay-1"></div>
-        </div>
-    </section>
-
-    <!-- 
-    * SEÇÃO MÉTODO
-    * 3 pilares de atuação em cards flutuantes
-    -->
-    <section id="metodo" class="metodo">
-        <div class="container">
-            <h2 class="elemento-oculto">Método Estratégico</h2>
             
-            <div class="pilares">
-                <!-- Pilar 1: Estratégia -->
-                <div class="pilar elemento-oculto">
-                    <div class="pilar-icon">
-                        <i class="fas fa-chess-queen"></i>
-                    </div>
-                    <h3>Estratégia</h3>
-                    <p>Análise profunda de mercado e definição de posicionamento único para seu negócio. Desenvolvimento de jornada de cliente otimizada para conversão.</p>
-                </div>
-                
-                <!-- Pilar 2: Tráfego Pago -->
-                <div class="pilar elemento-oculto delay-1">
-                    <div class="pilar-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Tráfego Pago</h3>
-                    <p>Implementação de campanhas segmentadas e otimizadas em tempo real. Foco em qualidade de tráfego, não apenas volume. Maximum ROI com mínimo desperdício.</p>
-                </div>
-                
-                <!-- Pilar 3: Otimização & Dados -->
-                <div class="pilar elemento-oculto delay-2">
-                    <div class="pilar-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Otimização & Dados</h3>
-                    <p>Monitoramento contínuo de performance com ajustes baseados em dados reais. Testes A/B sistemáticos para maximizar conversões e reduzir custos.</p>
-                </div>
+            <!-- Imagem placeholder para hero -->
+            <div class="hero-imagem oculto">
+                <!-- Imagem estratégica aqui -->
+                <i class="fas fa-chart-line"></i>
             </div>
         </div>
     </section>
 
-    <!-- 
-    * SEÇÃO NEGÓCIOS LOCAIS & PERFORMANCE
-    * Especialização em negócios locais
-    -->
-    <section id="negocios" class="negocios-locais">
+    <!-- SEÇÃO POSICIONAMENTO -->
+    <section class="posicionamento section">
+        <div class="container">
+            <div class="posicionamento-conteudo oculto">
+                <p class="posicionamento-texto">Não é sobre anúncios.<br>É sobre <span>aparecer para as pessoas certas</span>, no momento certo.</p>
+                <div class="linha-dourada"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MÉTODO -->
+    <section class="section">
+        <div class="container">
+            <h2 class="oculto" style="text-align: center; font-size: 2.2rem; margin-bottom: 1rem;">Método <span style="color: var(--dourado-premium);">Preciso</span></h2>
+            <p class="oculto" style="text-align: center; color: rgba(244, 243, 238, 0.8); max-width: 700px; margin: 0 auto 3rem;">Estratégias baseadas em dados para maximizar resultados e otimizar investimentos.</p>
+            
+            <div class="metodo-cards">
+                <!-- Card 1 -->
+                <div class="metodo-card oculto">
+                    <div class="metodo-card-numero">01</div>
+                    <h3>Estratégia</h3>
+                    <p>Desenvolvimento de planos personalizados com análise de mercado, definição de personas e mapeamento de jornada para conversões reais.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="metodo-card oculto">
+                    <div class="metodo-card-numero">02</div>
+                    <h3>Tráfego Pago</h3>
+                    <p>Gestão especializada em Google Ads, Meta Ads e LinkedIn Ads com segmentação avançada e otimização contínua para performance máxima.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="metodo-card oculto">
+                    <div class="metodo-card-numero">03</div>
+                    <h3>Otimização & Dados</h3>
+                    <p>Análise constante de métricas, testes A/B e ajustes estratégicos baseados em dados para maximizar ROI e reduzir custos por aquisição.</p>
+                </div>
+            </div>
+            
+            <!-- Imagem placeholder para método -->
+            <div class="metodo-imagem oculto">
+                <!-- Imagem de análise de dados/dashboard aqui -->
+                <i class="fas fa-database"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NEGÓCIOS LOCAIS -->
+    <section class="negocios-locais section">
         <div class="container">
             <div class="negocios-conteudo">
-                <h2 class="elemento-oculto">Negócios Locais & Performance</h2>
-                <p class="elemento-oculto delay-1">Especialista em estruturar tráfego pago para negócios locais que precisam de resultado real, não métricas vazias.</p>
-                <p class="elemento-oculto delay-2">Desenvolvimento de estratégias hiperlocalizadas que conectam sua marca com clientes qualificados em um raio de ação definido. Implementação de funis de conversão otimizados para o consumidor local, com mensuração precisa de cada etapa.</p>
-                <p class="elemento-oculto delay-3"><span class="texto-destaque">Performance que se traduz em clientes na porta, não apenas cliques no anúncio.</span></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 
-    * SEÇÃO CTA - CLÍMAX COM VERMELHO
-    * Momento de decisão impactante
-    -->
-    <section id="contato" class="cta-climax">
-        <div class="container">
-            <div class="cta-conteudo">
-                <h2 class="elemento-oculto">Seu negócio pode performar mais.</h2>
-                <p class="elemento-oculto delay-1">A diferença está na estratégia.</p>
-                <a href="#contato" class="btn btn-vermelho elemento-oculto delay-2">Entrar em contato</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 
-    * RODAPÉ PREMIUM - MINIMALISTA
-    * Apenas informações essenciais
-    -->
-    <footer>
-        <div class="container">
-            <div class="footer-conteudo">
-                <div class="footer-info">
-                    <h3>Robert Lima</h3>
-                    <p>Marketing digital, tráfego pago e performance para negócios de alto padrão. Especializado em resultados reais para empresas locais.</p>
+                <div class="negocios-texto oculto">
+                    <h2>Negócios Locais & <span>Performance</span></h2>
+                    <div class="linha-dourada-esquerda"></div>
+                    <p>Especialista em estruturar tráfego pago para negócios locais que precisam de resultado real, não métricas vazias. Atraia clientes qualificados para seu estabelecimento com geotargeting preciso e mensagens que convertem.</p>
+                    <p>Desenvolvemos campanhas que conectam sua oferta com o público certo na hora certa, transformando cliques em visitas e visitas em vendas.</p>
                 </div>
                 
-                <div class="footer-contato">
-                    <h4>Contato Direto</h4>
-                    <div class="contato-links">
-                        <a href="https://wa.me/5511999999999" target="_blank" class="contato-link">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                        <a href="https://instagram.com/robertlima" target="_blank" class="contato-link">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="mailto:contato@robertlimadesigner.com.br" class="contato-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>contato@robertlimadesigner.com.br</span>
-                        </a>
-                    </div>
+                <!-- Imagem placeholder para negócios locais -->
+                <div class="negocios-imagem oculto">
+                    <!-- Imagem relacionada a negócios locais/mapa aqui -->
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CTA -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-conteudo oculto">
+                <h2>Seu negócio pode <span>performar mais.</span></h2>
+                <p>A diferença está na estratégia.</p>
+                <a href="https://wa.me/5531982313684?text=Olá%20Robert,%20gostaria%20de%20saber%20como%20minha%20empresa%20pode%20performar%20mais." target="_blank" class="btn btn-vermelho">Entrar em contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-conteudo">
+                <div class="footer-info oculto">
+                    <h3>Robert Lima Designer</h3>
+                    <p>Marketing digital, tráfego pago e performance para negócios locais e empresas que buscam crescimento estratégico.</p>
+                </div>
+                
+                <div class="footer-links oculto">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#metodo">Método</a></li>
+                        <li><a href="#negocios">Negócios Locais</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contato oculto">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="https://wa.me/5531982313684" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="https://instagram.com/robertlimadesign" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="mailto:ofcrobertmacedo@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-copyright">
-                <p>&copy; 2023 Robert Lima. Todos os direitos reservados.</p>
+            <div class="footer-bottom oculto">
+                <p>&copy; 2023 Robert Lima Designer. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- 
-    * JAVASCRIPT LEVE
-    * Animações de entrada e interações suaves
-    -->
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5531982313684?text=Olá%20Robert,%20gostaria%20de%20conversar%20sobre%20tráfego%20pago." target="_blank" class="whatsapp-flutuante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
-        // Observador de interseção para animações de entrada
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('elemento-visivel');
-                }
-            });
-        }, observerOptions);
-        
-        // Aplicar observador a todos os elementos com classe 'elemento-oculto'
-        document.querySelectorAll('.elemento-oculto').forEach((el) => {
-            observer.observe(el);
-        });
-        
-        // Scroll suave para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Menu mobile toggle (simplificado)
-        const mobileToggle = document.querySelector('.nav-mobile-toggle');
-        if (mobileToggle) {
-            mobileToggle.addEventListener('click', () => {
-                alert('Menu mobile - Em uma implementação completa, isto abriria um menu elegante.');
-            });
-        }
-        
-        // Efeito de digitação no hero (opcional)
-        const heroTitle = document.querySelector('.hero h1');
-        if (heroTitle && window.innerWidth > 768) {
-            const originalText = heroTitle.textContent;
-            heroTitle.textContent = '';
-            
-            let i = 0;
-            const typeWriter = () => {
-                if (i < originalText.length) {
-                    heroTitle.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 30);
-                }
+        // ANIMAÇÃO DE SCROLL SUAVE
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observador de interseção para animações
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
             
-            // Iniciar após um pequeno delay
-            setTimeout(typeWriter, 500);
-        }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visivel');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar todos os elementos com classe 'oculto'
+            document.querySelectorAll('.oculto').forEach((el) => {
+                observer.observe(el);
+            });
+            
+            // Suavização adicional do scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Ajustar altura do hero para telas menores
+            function ajustarAlturaHero() {
+                const hero = document.querySelector('.hero');
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                
+                if (window.innerWidth < 768) {
+                    hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+                } else {
+                    hero.style.minHeight = '100vh';
+                }
+            }
+            
+            // Executar na carga e no redimensionamento
+            ajustarAlturaHero();
+            window.addEventListener('resize', ajustarAlturaHero);
+        });
     </script>
 </body>
 </html>
